@@ -1,0 +1,44 @@
+﻿@*@model Enumerable<AboutUs>*@
+@model List<Admin.Models.AboutUs>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+   // Layout = "null";
+}
+<!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('source/img/about-header.jpg');">
+      <div class="container position-relative d-flex flex-column align-items-center">
+
+        <h2>About</h2>
+        <ol>
+          <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+          <li>About</li>
+        </ol>
+
+      </div>
+    </div><!-- End Breadcrumbs -->
+ <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+    @foreach(var aboutUs in Model)
+    {
+         <div class="container" data-aos="fade-up">
+        <div class="row gy-4" data-aos="fade-up">
+          <div class="col-lg-4">
+            <img src="assets/img/about.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-8">
+            <div class="content ps-lg-5">
+              <h3> @aboutUs.about_heading</h3>
+              <p>
+                @Html.Raw(@aboutUs.about_detail)
+              </p>
+              
+            </div>
+          </div>
+        </div>
+
+      </div>
+    }
+   
+    </section><!-- End About Section -->

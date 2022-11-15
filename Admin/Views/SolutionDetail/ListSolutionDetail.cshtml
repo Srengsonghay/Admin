@@ -1,0 +1,48 @@
+﻿@model List<Admin.Models.SolutionDetail>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_LayoutDash";
+
+}
+
+
+@*<br/>
+ 
+<h4 class="card-title">
+          <a asp-area="" asp-controller="Partner" asp-action="ViewPartner"><i class="mdi mdi-chevron-left"></i></a>
+           Partner Contents</h4>*@
+<div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">
+          <a asp-area="" asp-controller="SolutionDetail" asp-action="CreateSolutionDetail"><i class="mdi mdi-chevron-left"></i></a>
+          Solution Detail</h4>
+                   
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          @*<th> ID </th>*@
+                          <th> Solution Name </th>
+                          @*<th> Type </th>*@
+                          <th> Remark</th>
+                          <th>  </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          @foreach(var detail in Model){
+                        <tr>             
+                          @*<td> @detail.id </td>*@
+                          <td> @detail.solutions.solution_name </td>
+                          @*<td> @detail.solutions.solutions_type.type_name</td>*@
+                          <td> @Html.Raw(@detail.remark?.Substring(0,detail.remark.Length > 70 ? 70 : detail.remark.Length)) </td>
+                          <td> <a href="UpdateSolutionDetail\@detail.id"><button type="button" class="btn btn-inverse-info btn-sm">Edit</button></a></td>
+                          </tr>
+                          }
+                      </tbody>
+                    </table>
+                    
+                  </div>
+                </div>
+              </div>

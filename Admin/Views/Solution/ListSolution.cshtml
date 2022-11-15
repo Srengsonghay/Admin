@@ -1,0 +1,48 @@
+﻿@model List<Admin.Models.Solutions>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_LayoutDash";
+
+}
+
+
+@*<br/>
+ 
+<h4 class="card-title">
+          <a asp-area="" asp-controller="Partner" asp-action="ViewPartner"><i class="mdi mdi-chevron-left"></i></a>
+           Partner Contents</h4>*@
+<div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">
+          <a asp-area="" asp-controller="Solution" asp-action="CreateSolution"><i class="mdi mdi-chevron-left"></i></a>
+          List of Solutions</h4>
+                   
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          @*<th> ID </th>*@
+                          <th> Solution Name </th>
+                          <th> Type </th>
+                          @*<th> Description</th>*@
+                          <th>  </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          @foreach(var Solutions in Model){
+                        <tr>             
+                            @*<td> @Partner.id </td>*@
+                          <td> @Solutions.solution_name </td>
+                          <td> @Solutions.solutions_type.type_name</td>
+                          @*<td> @Solution.description</td>*@
+                          <td> <a href="UpdateSolution\@Solutions.id"><button type="button" class="btn btn-inverse-info btn-sm">Edit</button></a></td>
+                          </tr>
+                          }
+                      </tbody>
+                    </table>
+                    
+                  </div>
+                </div>
+              </div>

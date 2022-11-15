@@ -1,0 +1,42 @@
+﻿@model Admin.Models.Events
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_LayoutDash";
+
+}
+<div class="col-12 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Update Events</h4>
+      @*<p class="card-description"> Basic form elements </p>*@
+      <form class="forms-sample" method="post" asp-action="UpdateEvent">
+        <div class="form-group">
+          @*<label for="exampleInputName1">ID</label>*@
+          <input type="hidden" class="form-control" id="exampleInputName1" asp-for="id" >
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail3">Event Heading</label>
+          <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Name" asp-for="event_heading">
+        </div>
+        <div class="form-group">
+            <label>Date</label>
+            <input class="form-control" type="date" asp-for ="event_date">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword4">Details</label>
+           <textarea id="div_editor1" style="width: 100%" asp-for="event_detail" class="form-control" >
+            </textarea>  
+          <script>
+	        var editor1 = new RichTextEditor("#div_editor1");
+	        //editor1.setHTMLCode("Use inline HTML or setHTMLCode to init the default content.");
+            </script>
+        </div>
+        <button type="submit" class="btn btn-inverse-warning btn-fw" >Update</button>
+        <button type="submit" class="btn btn-inverse-danger btn-fw" asp-area="" asp-controller="Event" asp-action="Delete">Delete</button>
+        <button asp-area="" asp-controller="Event" asp-action="ListEvent" class="btn btn-inverse-success btn-fw">View</button>
+      </form>
+    </div>
+  </div>
+</div>

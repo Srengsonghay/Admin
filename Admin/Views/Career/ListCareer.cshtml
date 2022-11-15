@@ -1,0 +1,42 @@
+﻿@model List<Admin.Models.Careers>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_LayoutDash";
+
+}
+<div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">
+          <a asp-area="" asp-controller="Career" asp-action="CreateCareer"><i class="mdi mdi-chevron-left"></i></a>
+           List of Careers</h4>
+                   
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                         @* <th> ID </th>
+                          <th> Logo </th>*@
+                          <th> Career Title </th>
+                          <th> Detail </th>
+                          <th> Date</th>
+                          <th>  </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          @foreach(var career in Model){
+                          <tr>             
+                         @* <td> @Partner.id </td>*@
+                          <td> @career.career_name </td>
+                          <td> @Html.Raw(@career.career_detail) </td>
+                          <td> @career.career_date.Value.ToString("MMM-dd-yyyy")</td>
+                          <td> <a href="UpdateCareer\@career.id"><button type="button" class="btn btn-inverse-info btn-sm">Edit</button></a></td>
+                          </tr>
+                          }
+                      </tbody>
+                    </table>
+                    
+                  </div>
+                </div>
+              </div>
