@@ -15,7 +15,7 @@ namespace Admin.Models{
         [InverseProperty("Partners")]
         public virtual Category_partner category_partner { get; set; }
         public string? partner_detail {get; set;}
-        public string? status {get; set;}
+        public bool? status {get; set;}
 
         
     }

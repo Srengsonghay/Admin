@@ -9,7 +9,7 @@ namespace Admin.Models
         [Key]
         public Guid id { get; set; }
         public string? category_name { get; set; }
-        public string? status { get; set; }
+        public bool? status { get; set; }
         [InverseProperty(nameof(Admin.Models.Customers.category_customer))]
         public virtual ICollection<Customers> Customers { get; set; }
     }

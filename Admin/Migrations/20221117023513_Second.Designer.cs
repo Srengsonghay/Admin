@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Admin.Migrations
 {
     [DbContext(typeof(AdminDbContext))]
-    [Migration("20221110073123_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20221117023513_Second")]
+    partial class Second
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -56,6 +56,21 @@ namespace Admin.Migrations
                     b.Property<string>("career_name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime?>("closing_date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("department")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("hiring")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("is_active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("location")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("id");
 
                     b.ToTable("Careers");
@@ -70,8 +85,8 @@ namespace Admin.Migrations
                     b.Property<string>("category_name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("status")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool?>("status")
+                        .HasColumnType("bit");
 
                     b.HasKey("id");
 
@@ -87,8 +102,8 @@ namespace Admin.Migrations
                     b.Property<string>("category_name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("status")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool?>("status")
+                        .HasColumnType("bit");
 
                     b.HasKey("id");
 
@@ -113,8 +128,8 @@ namespace Admin.Migrations
                     b.Property<string>("customer_name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("status")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool?>("status")
+                        .HasColumnType("bit");
 
                     b.HasKey("id");
 
@@ -161,8 +176,8 @@ namespace Admin.Migrations
                     b.Property<string>("partner_name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("status")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool?>("status")
+                        .HasColumnType("bit");
 
                     b.HasKey("id");
 

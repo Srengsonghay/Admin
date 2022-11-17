@@ -55,13 +55,6 @@ namespace Admin.Controllers
             return RedirectToAction("CreatePartner");
         }
 
-        [HttpGet]
-        public async Task<IActionResult> partner()
-        {
-            var Partner = await _adminDbContext.Partners.Include(x => x.category_partner).ToListAsync();
-            return View(Partner);
-        }
-
         public async Task<IActionResult> ListPartner()
         {
             var listPartner = await _adminDbContext.Partners.Include(x => x.category_partner).ToListAsync();
@@ -134,6 +127,10 @@ namespace Admin.Controllers
             }
             return RedirectToAction("ListPartner");
         }
-
+        public async Task<IActionResult> ViewPartner()
+        {
+            var partner = await _adminDbContext.Partners.ToListAsync();
+            return View(partner);
+        }
     }
 }

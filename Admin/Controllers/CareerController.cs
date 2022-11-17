@@ -54,5 +54,18 @@ namespace Admin.Controllers
             await _adminDbContext.SaveChangesAsync();
             return RedirectToAction("ListCareer");
         }
+
+        public async Task<IActionResult> ViewCareer()
+        {
+            var career = await _adminDbContext.Careers.ToListAsync();
+            return View(career);
+        }
+        public async Task<IActionResult> ViewCareerDetail(Guid id)
+        {
+            var career = await _adminDbContext.Careers.FirstOrDefaultAsync(x => x.id == id);
+            return View(career);
+            return RedirectToAction("ViewCareerDetail");
+        }
+
     }
 }

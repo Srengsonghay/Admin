@@ -16,11 +16,15 @@
                     <table class="table table-striped">
                       <thead>
                         <tr>
-                         @* <th> ID </th>
-                          <th> Logo </th>*@
-                          <th> Career Title </th>
-                          <th> Detail </th>
-                          <th> Date</th>
+                         @* <th> ID </th>*@
+                          <th> Title </th>
+                          <th>  Department</th>
+                          <th>  Position</th>
+                          <th>  Location</th>
+                          <th>  Stating Date</th>
+                          <th>  Closing Date</th>
+                          @*<th> Detail </th>*@
+                          <th> Status</th>
                           <th>  </th>
                         </tr>
                       </thead>
@@ -29,8 +33,25 @@
                           <tr>             
                          @* <td> @Partner.id </td>*@
                           <td> @career.career_name </td>
-                          <td> @Html.Raw(@career.career_detail) </td>
-                          <td> @career.career_date.Value.ToString("MMM-dd-yyyy")</td>
+                          <td> @career.department </td>
+                          <td> @career.hiring </td>
+                          <td> @career.location </td>
+                          <td> @career.career_date.Value.ToString("MMM-dd-yyyy") </td>
+                          <td> @career.closing_date.Value.ToString("MMM-dd-yyyy") </td>
+                          @*<td>@Html.Raw(@career.career_detail?.Substring(0,career.career_detail.Length > 70 ? 70 : career.career_detail.Length))</td>*@
+                            <td> @{
+                                    if(career.is_active == true)
+                                    {
+                                        <h5 class="card-title text-success">Active</h5>
+                                    }
+                                    else
+                                    {
+                                         <h5 class="card-title text-danger">None</h5>
+                                    }
+                              }
+                            </td>
+                          
+                          @*<td> @career.is_active</td>*@
                           <td> <a href="UpdateCareer\@career.id"><button type="button" class="btn btn-inverse-info btn-sm">Edit</button></a></td>
                           </tr>
                           }

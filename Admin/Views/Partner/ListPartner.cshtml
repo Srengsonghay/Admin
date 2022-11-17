@@ -46,7 +46,18 @@
                             </td>
                           <td> @Partner.partner_name </td>
                           <td> @Partner.category_partner.category_name</td>
-                          <td> @Partner.status</td>
+                          <td> 
+                              @{
+                                    if(@Partner.status == true)
+                                    {
+                                        <h5 class="card-title text-success">Active</h5>
+                                    }
+                                    else
+                                    {
+                                         <h5 class="card-title text-danger">None</h5>
+                                    }
+                              }
+                          </td>
                           <td> <a href="UpdatePartner\@Partner.id"><button type="button" class="btn btn-inverse-info btn-sm">Edit</button></a></td>
                           </tr>
                           }

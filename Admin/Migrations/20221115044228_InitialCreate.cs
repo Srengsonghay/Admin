@@ -29,7 +29,12 @@ namespace Admin.Migrations
                     id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     career_name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     career_detail = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    career_date = table.Column<DateTime>(type: "datetime2", nullable: true)
+                    career_date = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    location = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    department = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    hiring = table.Column<int>(type: "int", nullable: true),
+                    closing_date = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    is_active = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {

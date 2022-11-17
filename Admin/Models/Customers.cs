@@ -16,6 +16,6 @@ namespace Admin.Models
         [InverseProperty("Customers")]
         public virtual Category_customer category_customer { get; set; }        
         public string? customer_detail { get; set; }
-        public string? status { get; set; }
+        public bool? status { get; set; }
     }
 }

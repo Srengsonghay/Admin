@@ -1,0 +1,48 @@
+﻿@model List<Admin.Models.Partners>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Layout";
+}
+<div class="breadcrumbs d-flex align-items-center" style="background-image: url('@Url.Content("~/source/img/team-header.jpg")');">
+      <div class="container position-relative d-flex flex-column align-items-center">
+
+        <h2>Partners</h2>
+       @* <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Services</li>
+        </ol>*@
+
+      </div>
+    </div><!-- End Breadcrumbs -->
+<section id="services-cards" class="services-cards">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row gy-4">
+                @foreach(var partner in Model){
+                  <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-item">
+                      <div class="row">
+                        <div class="col-xl-5 ">
+                            @{
+                               var base64 = Convert.ToBase64String(partner.partner_logo);
+                               var img = string.Format("data:image/gif;base64,{0}", base64);
+                             }
+                          @*<div class="card-bg" style="background-image: url(@img);"></div>*@
+                          <img src="@img" class="card-bg" style="width:250px; height:120px;">
+                        </div>
+                        <div class="col-xl-7 d-flex align-items-center">
+                          <div class="card-body">
+                            <h4 class="card-title">@partner.partner_name</h4>
+                            <p>@Html.Raw(partner.partner_detail)</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- End Card Item -->
+                }
+          </div>
+
+      </div>
+    </section><!-- End Services Cards Section -->

@@ -52,5 +52,9 @@ namespace Admin.Controllers
             await _adminDbContext.SaveChangesAsync();
             return RedirectToAction("ListEvent");
         }
+        public async Task<IActionResult> ViewEvent()
+        {
+            var
+        }
     }
 }

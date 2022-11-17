@@ -1,0 +1,73 @@
+﻿@model List<Admin.Models.Careers>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+	Layout = "_Layout";
+}
+<body class="page-blog">
+	<main id="main">
+	<!-- ======= Breadcrumbs ======= -->
+	<div class="breadcrumbs d-flex align-items-center" style="background-image: url('@Url.Content("~/source/img/services-header.jpg")');">
+	  <div class="container position-relative d-flex flex-column align-items-center">
+
+		<h2>Career</h2>
+				@* <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Blog</li>
+        </ol>*@
+
+	  </div>
+	</div><!-- End Breadcrumbs -->
+
+	<section id="blog" class="blog">
+	  <div class="container" data-aos="fade-up">
+
+		<div class="row g-5 ">
+
+					<div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
+
+			<div class="row gy-5 posts-list">
+
+						@foreach (var career in Model)
+						{
+							<div class="col-lg-4">
+								<article class="d-flex flex-column">
+									@*<div class="post-img">
+										<img src="~/source/img/blog/blog-1.jpg" alt="" class="img-fluid">
+									  </div>*@
+
+											  <h2 class="title">
+												<a href="ViewCareerDetail\@career.id">@career.career_name</a>
+											  </h2>
+
+											  <div class="meta-top">
+												<ul>
+												  <li class="d-flex align-items-center" id="hovertext" data-hover="Hiring"><i class="bi bi-person" style="font-size:35px;" ></i> <a href="ViewCareerDetail\@career.id"> @career.hiring</a></li>
+												  <li class="d-flex align-items-center" id="hovertext" data-hover="Closing Date"><i class="bi bi-calendar2-week" style="font-size:35px;" ></i> <a href="ViewCareerDetail\@career.id"> @career.closing_date.Value.ToString("MMM-dd-yyyy")</a></li>
+												  <li class="d-flex align-items-center" id="hovertext" data-hover="Department"><i class="bi bi-building" style="font-size:35px;" ></i> <a href="ViewCareerDetail\@career.id">@career.department</a></li>
+												</ul>
+											  </div>
+
+											  @*<div class="content">
+													@Html.Raw(@career.career_detail?.Substring(0,career.career_detail.Length > 70 ? 70 : career.career_detail.Length))
+													@Html.Raw(@career.career_detail?.Substring(0,70).Length)
+												  </div>*@
+
+											  @*<div class="read-more mt-auto align-self-end">
+												<a href="ViewCareerDetail\@career.id">Read More <i class="bi bi-arrow-right"></i></a>
+											  </div>*@
+
+
+								</article>
+
+							</div>
+						}
+			</div>
+		</div>
+	</div>
+				</div>
+
+		</section>
+		</main>
+</body>

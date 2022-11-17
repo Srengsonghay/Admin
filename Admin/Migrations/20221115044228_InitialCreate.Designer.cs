@@ -4,6 +4,7 @@ using Admin.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Admin.Migrations
 {
     [DbContext(typeof(AdminDbContext))]
-    partial class AdminDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221115044228_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -83,8 +85,8 @@ namespace Admin.Migrations
                     b.Property<string>("category_name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("status")
-                        .HasColumnType("bit");
+                    b.Property<string>("status")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");
 
@@ -100,8 +102,8 @@ namespace Admin.Migrations
                     b.Property<string>("category_name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("status")
-                        .HasColumnType("bit");
+                    b.Property<string>("status")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");
 
@@ -126,8 +128,8 @@ namespace Admin.Migrations
                     b.Property<string>("customer_name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("status")
-                        .HasColumnType("bit");
+                    b.Property<string>("status")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");
 
@@ -174,8 +176,8 @@ namespace Admin.Migrations
                     b.Property<string>("partner_name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("status")
-                        .HasColumnType("bit");
+                    b.Property<string>("status")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");
 

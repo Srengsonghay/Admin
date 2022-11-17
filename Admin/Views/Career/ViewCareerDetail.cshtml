@@ -1,0 +1,57 @@
+﻿@model Admin.Models.Careers
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+	Layout = "_Layout";
+}
+<main id="main">
+
+	<!-- ======= Breadcrumbs ======= -->
+	<div class="breadcrumbs d-flex align-items-center" style="background-image: url('@Url.Content("~/source/img/team-header.jpg")');">
+	  <div class="container position-relative d-flex flex-column align-items-center">
+
+		<h2>Career Details</h2>
+			@* <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Blog Details</li>
+        </ol>*@
+
+	  </div>
+	</div><!-- End Breadcrumbs -->
+	<!-- ======= Blog Details Section ======= -->
+	<section id="blog" class="blog">
+	  <div class="container" data-aos="fade-up">
+
+		<div class="row g-5">
+
+		  <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
+					<article class="blog-details">
+
+					  @*<div class="post-img">
+						<img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+					  </div>*@
+
+					  <h2 class="title">@Model.career_name</h2>
+
+					  <div class="meta-top">
+						<ul>
+							<li class="d-flex align-items-center" id="hovertext" data-hover="Hiring"><i class="bi bi-person"></i>  @Model.hiring</li>
+							<li class="d-flex align-items-center" id="hovertext" data-hover="Starting Date"><i class="bi bi-calendar2-week"></i> @Model.closing_date.Value.ToString("MMM-dd-yyyy") </li>
+							<li >--</li>
+							<li class="d-flex align-items-center" id="hovertext" data-hover="Closing Date"> @Model.career_date.Value.ToString("MMM-dd-yyyy")</li>
+							<li class="d-flex align-items-center" id="hovertext" data-hover="Department"><i class="bi bi-building"></i>@Model.department</li>
+							<li class="d-flex align-items-center" id="hovertext" data-hover="Location"><i class="bi bi-geo-alt"></i> @Model.location</li>
+						</ul> 
+					  </div><!-- End meta top -->
+
+					  <div class="content">
+						<p>
+							@Html.Raw(@Model.career_detail)
+						</p>
+					  </div><!-- End post content -->
+
+					</article><!-- End blog post -->
+			</section><!-- End Blog Details Section -->
+
+  </main><!-- End #main -->

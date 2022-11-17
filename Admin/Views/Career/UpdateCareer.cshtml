@@ -20,10 +20,64 @@
           <label for="exampleInputEmail3">Title</label>
           <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Name" asp-for="career_name">
         </div>
-        <div class="form-group">
-            <label>Date</label>
-            <input class="form-control" type="date" id="formFile" asp-for ="career_date">
-        </div>
+        <div class="row">
+			  <div class="col-md-6 ">
+						<div class="form-group">
+						  <label for="exampleInputEmail3">Starting Date</label>
+						  <input type="date" class="form-control" id="datepicker" asp-for="career_date">
+						</div>
+
+						</div>
+			  <div class="col-md-6">
+						<div class="form-group">
+						  <label for="exampleInputEmail3">Closing Date</label>
+						  <input type="date" class="form-control" id="datepicker" asp-for="closing_date">
+						</div>
+			</div>
+		</div>
+		<div class="row">
+			  <div class="col-md-6 ">
+						<div class="form-group">
+						  <label for="exampleInputEmail3">Hiring</label>
+						  <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Quantity" asp-for="hiring ">
+						</div>
+					</div>
+			  <div class="col-md-6 ">
+						<div class="form-group">
+						  <label for="exampleInputEmail3">Department</label>
+						  <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Department" asp-for="department ">
+						</div>
+					</div>
+				</div>
+			<div class="row">
+			  <div class="col-md-6 ">
+						<div class="form-group">
+						  <label for="exampleInputEmail3">Location</label>
+						  <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Location" asp-for="location ">
+						</div>
+					</div>
+					<div class="col-md-6 ">
+						<div class="form-group">
+						  <label for="exampleInputEmail3">Status</label>
+						  <label for="exampleInputEmail3">Status</label>
+							 <div style= "margin-left: 50px;">
+							  <div class="form-check">
+								  <input class="form-check-input" type="radio" id="flexRadioDefault2" value="true" asp-for="is_active" checked>
+								  <label class="form-check-label" for="flexRadioDefault2">
+									Active
+								  </label>
+								</div>
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" id="flexRadioDefault2" value="false" asp-for="is_active">
+								  <label class="form-check-label" for="flexRadioDefault2">
+									None
+								  </label>
+								</div>
+							  </div>
+						  </div>
+						
+					</div>
+				</div>
         <div class="form-group">
           <label for="exampleInputPassword4">Details</label>
            <textarea id="div_editor1" style="width: 100%" asp-for="career_detail" class="form-control" >

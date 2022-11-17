@@ -30,6 +30,38 @@
   <!-- Template Main CSS File -->
   <link href="~/source/css/main.css" rel="stylesheet">
 
+  <style>
+      .breadcrumbs{
+          height: 350px;
+      }
+      #hovertext {
+      position: relative;
+      /*border-bottom: 1px dotted black;*/
+      }
+
+      #hovertext:before {
+      content: attr(data-hover);
+      visibility: hidden;
+      opacity: 0;
+      width: 140px;
+      background-color: #737373;
+      color: #fff;
+      text-align: center;
+      border-radius: 5px;
+      padding: 5px 0;
+      transition: opacity 1s ease-in-out;
+
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      top: 110%;
+      }
+
+      #hovertext:hover:before {
+      opacity: 1;
+      visibility: visible;
+     }
+  </style>
 </head>
 
 <body class="page-index">
@@ -72,9 +104,10 @@
         <ul>
           <li><a asp-area="" asp-controller="Home" asp-action="index">Home</a></li>
           <li><a asp-area="" asp-controller="AboutUS" asp-action="about">About Us</a></li>
-          <li><a asp-area="" asp-controller="Event" asp-action="event">event</a></li>
-          <li><a asp-area="" asp-controller="Partner" asp-action="partner">Partners</a></li>
-          <li><a asp-area="" asp-controller="Home" asp-action="Index">Team</a></li>
+          <li><a asp-area="" asp-controller="Event" asp-action="ViewEvent">Event</a></li>
+          <li><a asp-area="" asp-controller="Partner" asp-action="ViewPartner">Partners</a></li>
+           <li><a asp-area="" asp-controller="Customer" asp-action="ViewCustomer">Customers</a></li>
+          <li><a asp-area="" asp-controller="Career" asp-action="ViewCareer">Career</a></li>
           <li><a asp-area="" asp-controller="Dashboard" asp-action="ViewDashboard">Log</a></li>
           <li class="dropdown"><a href="#"><span>Dropdown</span> <i
                 class="bi bi-chevron-down dropdown-indicator"></i></a>
@@ -103,7 +136,7 @@
 
  
 
-  <main id="main">
+  <main id="main" style="margin-bottom: 300px;">
 
 
 
@@ -113,16 +146,17 @@
 
   </main><!-- End #main -->
 
+
   @*<footer class="border-top footer text-muted">
     <div class="container">
     &copy; 2022 - Admin - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
     </div>
-    </footer>*@
-  @* <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    </footer>
+     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false) *@
-
+    @await RenderSectionAsync("Scripts", required: false) 
+    *@
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
 
@@ -130,10 +164,10 @@
       <div class="container">
         <div class="row gy-4">
           <div class="col-lg-5 col-md-12 footer-info">
-            <a href="index.html" class="logo d-flex align-items-center">
+            @*<a href="index.html" class="logo d-flex align-items-center">
               <span>Nova</span>
             </a>
-            @* <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna
+             <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna
               derita valies
               darta donna mare fermentum iaculis eu non diam phasellus.
               </p> *@
@@ -185,7 +219,7 @@
 
    
   </footer><!-- End Footer -->
-  <!-- End Footer -->
+  End Footer
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
