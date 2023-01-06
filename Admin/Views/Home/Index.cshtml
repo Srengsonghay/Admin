@@ -1,83 +1,24 @@
-﻿@{
+﻿@model Admin.ViewModel.HomeViewModel
+@{
   ViewData["Title"] = "Home Page";
 }
-@*<nav class="navbar navbar-expand-lg bg-light">
-  <div class="container-fluid">
-  <a class="navbar-brand" href="#">Front</a>
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-  <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-  Solution
-  </a>
-  <ul class="dropdown-menu">
-  <li><a class="dropdown-item" href="#">Action</a></li>
-  <li><a class="dropdown-item" href="#">Another action</a></li>
-
-  </ul>
-  </li>
-
-  <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-  Event
-  </a>
-  <ul class="dropdown-menu">
-  <li><a class="dropdown-item" href="#">Action</a></li>
-  <li><a class="dropdown-item" href="#">Another action</a></li>
-
-  </ul>
-  </li>
-
-  <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-  About US
-  </a>
-  <ul class="dropdown-menu">
-  <li><a class="dropdown-item" href="#">Action</a></li>
-  <li><a class="dropdown-item" href="#">Another action</a></li>
-
-  </ul>
-  </li>
-
-  <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-  Career
-  </a>
-  <ul class="dropdown-menu">
-  <li><a class="dropdown-item" href="#">Action</a></li>
-  <li><a class="dropdown-item" href="#">Another action</a></li>
-
-  </ul>
-  </li>
-  <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-  Partners
-  </a>
-  <ul class="dropdown-menu">
-  <li><a class="dropdown-item" href="#">Action</a></li>
-  <li><a class="dropdown-item" href="#">Another action</a></li>
-
-  </ul>
-  </li>
-  <li class="nav-item">
-  <a class="nav-link" asp-area="" asp-controller="Dashboard" asp-action="ViewPartner">Log</a>
-  </li>
-  </ul>
-
-  <form class="d-flex" role="search">
-  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-  <button class="btn btn-outline-success" type="submit">Search</button>
-  </form>
-
-  </div>
-  </div>
-  </nav>
-*@
+<style>
+    /*.title{
+        border-radius: 5px;
+        background-color: #BDBDBD;
+        height: 50px;*/
+        
+    }
+    .box{
+        padding-top: 0px;
+        margin-top: 0px;
+        border: 3px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+</style>
  <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero d-flex align-items-center">
     <div class="container">
@@ -99,141 +40,59 @@
       </div>
     </div>
   </section><!-- End Hero Section -->
-<!-- ======= Why Choose Us Section ======= -->
-<section id="why-us" class="why-us">
-  <div class="container" data-aos="fade-up">
 
-    <div class="section-header">
-      <h2>Why Choose Us</h2>
+  <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
 
-    </div>
-
-    <div class="row g-0" data-aos="fade-up" data-aos-delay="200">
-
-      <div class="col-xl-5 img-bg" style="background-image: url('source/img/why-us-bg.jpg')"></div>
-      <div class="col-xl-7 slides  position-relative">
-
-        <div class="slides-1 swiper">
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="item">
-                <h3 class="mb-3">Let's grow your business together</h3>
-                <h4 class="mb-3">Optio reiciendis accusantium iusto architecto at quia minima maiores quidem,
-                  dolorum.</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, ipsam perferendis
-                  asperiores explicabo vel tempore velit totam, natus nesciunt accusantium dicta quod quibusdam
-                  ipsum maiores nobis non, eum. Ullam reiciendis dignissimos laborum aut, magni voluptatem velit
-                  doloribus quas sapiente optio.</p>
-              </div>
-            </div><!-- End slide item -->
-
-            <div class="swiper-slide">
-              <div class="item">
-                <h3 class="mb-3">Unde perspiciatis ut repellat dolorem</h3>
-                <h4 class="mb-3">Amet cumque nam sed voluptas doloribus iusto. Dolorem eos aliquam quis.</h4>
-                <p>Dolorem quia fuga consectetur voluptatem. Earum consequatur nulla maxime necessitatibus cum
-                  accusamus. Voluptatem dolorem ut numquam dolorum delectus autem veritatis facilis. Et ea ut
-                  repellat ea. Facere est dolores fugiat dolor.</p>
-              </div>
-            </div><!-- End slide item -->
-
-            <div class="swiper-slide">
-              <div class="item">
-                <h3 class="mb-3">Aliquid non alias minus</h3>
-                <h4 class="mb-3">Necessitatibus voluptatibus explicabo dolores a vitae voluptatum.</h4>
-                <p>Neque voluptates aut. Soluta aut perspiciatis porro deserunt. Voluptate ut itaque velit. Aut
-                  consectetur voluptatem aspernatur sequi sit laborum. Voluptas enim dolorum fugiat aut.</p>
-              </div>
-            </div><!-- End slide item -->
-
-            <div class="swiper-slide">
-              <div class="item">
-                <h3 class="mb-3">Necessitatibus suscipit non voluptatem quibusdam</h3>
-                <h4 class="mb-3">Tempora quos est ut quia adipisci ut voluptas. Deleniti laborum soluta nihil est.
-                  Eum similique neque autem ut.</h4>
-                <p>Ut rerum et autem vel. Et rerum molestiae aut sit vel incidunt sit at voluptatem. Saepe dolorem
-                  et sed voluptate impedit. Ad et qui sint at qui animi animi rerum.</p>
-              </div>
-            </div><!-- End slide item -->
-
+        <div class="row gy-4" data-aos="fade-up">
+         @* <div class="col-lg-4">
+            <img src="assets/img/about.jpg" class="img-fluid" alt="">
+          </div>*@
+            @foreach (var about in Model.about_us.Take(1))
+            {
+                <div class="col-lg-12" style="margin-bottom: 20px;">
+                <div class="content ps-lg-5">
+                  <h3>@about.about_heading</h3>
+                  <p>
+                @Html.Raw(about.about_detail)
+              </p>
+             
+            </div>
           </div>
-          <div class="swiper-pagination"></div>
+            }
+           
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+
       </div>
+    </section><!-- End About Section -->
 
-    </div>
-
-  </div>
-</section><!-- End Why Choose Us Section -->
 
 <!-- ======= Our Services Section ======= -->
 <section id="services-list" class="services-list">
   <div class="container" data-aos="fade-up">
 
     <div class="section-header">
-      <h2>Our Services</h2>
+      <h2>Our Solutions</h2>
 
     </div>
 
     <div class="row gy-5">
-
-      <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
-        <div class="icon flex-shrink-0"><i class="bi bi-briefcase" style="color: #f57813;"></i></div>
-        <div>
-          <h4 class="title"><a href="#" class="stretched-link">Lorem Ipsum</a></h4>
-          <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
-            occaecati cupiditate non provident</p>
-        </div>
-      </div>
-      <!-- End Service Item -->
-
-      <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
-        <div class="icon flex-shrink-0"><i class="bi bi-card-checklist" style="color: #15a04a;"></i></div>
-        <div>
-          <h4 class="title"><a href="#" class="stretched-link">Dolor Sitema</a></h4>
-          <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat tarad limino ata</p>
-        </div>
-      </div><!-- End Service Item -->
-
-      <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
-        <div class="icon flex-shrink-0"><i class="bi bi-bar-chart" style="color: #d90769;"></i></div>
-        <div>
-          <h4 class="title"><a href="#" class="stretched-link">Sed ut perspiciatis</a></h4>
-          <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-            fugiat nulla pariatur</p>
-        </div>
-      </div><!-- End Service Item -->
-
-      <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="400">
-        <div class="icon flex-shrink-0"><i class="bi bi-binoculars" style="color: #15bfbc;"></i></div>
-        <div>
-          <h4 class="title"><a href="#" class="stretched-link">Magni Dolores</a></h4>
-          <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-            mollit anim id est laborum</p>
-        </div>
-      </div><!-- End Service Item -->
-
-      <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="500">
-        <div class="icon flex-shrink-0"><i class="bi bi-brightness-high" style="color: #f5cf13;"></i></div>
-        <div>
-          <h4 class="title"><a href="#" class="stretched-link">Nemo Enim</a></h4>
-          <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-            praesentium voluptatum deleniti atque</p>
-        </div>
-      </div><!-- End Service Item -->
-
-      <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="600">
-        <div class="icon flex-shrink-0"><i class="bi bi-calendar4-week" style="color: #1335f5;"></i></div>
-        <div>
-          <h4 class="title"><a href="#" class="stretched-link">Eiusmod Tempor</a></h4>
-          <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum
-            soluta nobis est eligendi</p>
-        </div>
-      </div><!-- End Service Item -->
+            @foreach (var solutions in Model.solutions.Take(6))
+            {
+                 <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+                    <div class="box" style="text-align:justify; margin:0;">
+                          
+                          <h4 class="title" style="text-align: center;margin:0px;border-radius: 5px; background-color: #BDBDBD; height: 50px;">
+                              <a asp-controller="Solution" asp-action="ViewSolutionDetail" asp-route-id="@solutions.id" class="stretched-link">@solutions.solution_name</a></h4>
+                          <div style="padding: 8px;">
+                          <p class="description" >@Html.Raw(solutions.description)</p>
+                          </div>
+                        </div>
+                  </div> 
+                  <!-- End Service Item -->
+            }
+           
 
     </div>
 
@@ -245,12 +104,95 @@
   <div class="container" data-aos="fade-up">
     <div class="row justify-content-center">
       <div class="col-lg-6 text-center">
-        <h3>Ut fugiat aliquam aut non</h3>
-        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          Excepteur sint occaecat cupidatat non proident.</p>
+        <h3>Contact Top Solutions</h3>
+        <p>We will discuess and provide all the solutions that you need. Meet out analyser and cover your requirments to solve your business or your organization problems with our latest technology.</p>
         <a class="cta-btn" href="#">Call To Action</a>
       </div>
     </div>
 
   </div>
 </section><!-- End Call To Action Section -->
+
+<!-- ======= Our Partner Section ======= -->
+<section id="why-us" class="why-us">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-header">
+      <h2>Our Partners</h2>
+
+    </div>
+
+    <div class="row g-0" style="height: 350px" data-aos="fade-up" data-aos-delay="200">
+      <div class="col-xl-12 slides  position-relative">
+
+        <div class="slides-1 swiper" style="margin-top:5px;">
+          <div class="swiper-wrapper">
+                        @foreach (var partner in Model.partner)
+                        {
+                            <div class="swiper-slide" style="text-align:center;">
+                              <div class="item">
+                                          @{
+                                           var base64 = Convert.ToBase64String(partner.partner_logo);
+                                           var img = string.Format("data:image/gif;base64,{0}", base64);
+                                         }
+                                          <img src="@img" style="width: 300px; height: 250px;align: center;" />
+                                        <h3 class="mb-3">@partner.partner_name</h3>
+                                      
+                              </div>
+                            </div><!-- End slide item -->
+                        }
+                        
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+
+    </div>
+
+  </div>
+</section><!-- End our Partner Section -->
+
+<!-- ======= Recent Blog Posts Section ======= -->
+    <section id="recent-posts" class="recent-posts">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Recent Events Posts</h2>
+
+        </div>
+
+        <div class="row gy-5">
+            @foreach (var events in Model.blog_event.Take(4))
+            {
+                <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="post-box"><a asp-area=""  asp-controller="Event" asp-action="ViewEventDetail" asp-route-id="@events.id" asp-route-Title="@SlugGenerator.SlugGenerator.GenerateSlug(events.event_heading)">
+                  <div class="post-img" >
+                      @{
+                                    var base64 = Convert.ToBase64String(events.event_image);
+                                    var img = string.Format("data:image/gif;base64,{0}", base64);
+                                }
+                      <img src="@img" class="img-fluid" alt="" style="height: 250px;"></div>
+                  <div class="meta">
+                    <span class="post-date">@events.event_date.Value.ToString("ddd-MMM-yyyy")</span>
+                  </div>
+                  <h3 class="post-title">@events.event_heading</h3>
+                   <div class="content overflow-hidden"  style="height:92px; ">
+                  <p>@Html.Raw(events.event_detail)</p>
+                  </div></a>
+                  <a asp-area=""  asp-controller="Event" asp-action="ViewEventDetail" asp-route-id="@events.id" asp-route-Title="@SlugGenerator.SlugGenerator.GenerateSlug(events.event_heading)"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            }
+          
+
+         
+
+      
+
+        </div>
+
+      </div>
+    </section><!-- End Recent Blog Posts Section -->

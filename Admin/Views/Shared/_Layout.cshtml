@@ -12,6 +12,7 @@
   <!-- Favicons -->
   <link href="~/source/img/favicon.png" rel="icon">
   <link href="~/source/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,6 +30,7 @@
   <link href="~/source/vendor/remixicon/remixicon.css" rel="stylesheet">
   <!-- Template Main CSS File -->
   <link href="~/source/css/main.css" rel="stylesheet">
+  <link href="~/source/css/modal.css" rel="stylesheet">
 
   <style>
       .breadcrumbs{
@@ -61,7 +63,11 @@
       opacity: 1;
       visibility: visible;
      }
+
   </style>
+  
+
+  
 </head>
 
 <body class="page-index">
@@ -103,45 +109,49 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a asp-area="" asp-controller="Home" asp-action="index">Home</a></li>
-          <li><a asp-area="" asp-controller="AboutUS" asp-action="about">About Us</a></li>
+          <li><a asp-area="" asp-controller="AboutUS" asp-action="ViewAboutus">About Us</a></li>
           <li><a asp-area="" asp-controller="Event" asp-action="ViewEvent">Event</a></li>
           <li><a asp-area="" asp-controller="Partner" asp-action="ViewPartner">Partners</a></li>
            <li><a asp-area="" asp-controller="Customer" asp-action="ViewCustomer">Customers</a></li>
           <li><a asp-area="" asp-controller="Career" asp-action="ViewCareer">Career</a></li>
-          <li><a asp-area="" asp-controller="Dashboard" asp-action="ViewDashboard">Log</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i
-                class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Solutions</span> <i
-                    class="bi bi-chevron-down dropdown-indicator"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
+          <li><a asp-area="" asp-controller="Solution" asp-action="ViewSolution">Solutions</a></li>
+          @*<li><a asp-area="" asp-controller="Dashboard" asp-action="ViewDashboard">Log </a></li>*@
+          <li><partial name="_LoginPartial" /></li>
+          @*<li class="dropdown"><a asp-area="" asp-controller="Solution" asp-action="ViewSolution"><span>Dropdown</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a></li>*@
+         @* <li> 
+               <div class="wrapper">
+                    <a href="#demo-modal">Open Demo Modal</a>
+                </div>
+
+                <div id="demo-modal" class="modal">
+                    <div class="modal__content">
+                        <h1>CSS Only Modal</h1>
+
+                        <p>
+                            You can use the :target pseudo-class to create a modals with Zero JavaScript. Enjoy!
+                        </p>
+
+                        <div class="modal__footer">
+                            Made with <i class="fa fa-heart"></i>, by <a href="https://twitter.com/denicmarko" target="_blank">@@denicmarko</a>
+                        </div>
+
+                        <a href="#" class="modal__close">&times;</a>
+                    </div>
+                </div>
+          </li>*@
+                
+                       
+           
+          
         </ul>
       </nav><!-- .navbar -->
 
+     
     </div>
   </header><!-- End Header -->
-
- 
-
+  
   <main id="main" style="margin-bottom: 300px;">
-
-
-
-
-
+    <partial name="_NotificationPartial" />
     @RenderBody()
 
   </main><!-- End #main -->
@@ -219,7 +229,7 @@
 
    
   </footer><!-- End Footer -->
-  End Footer
+
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
@@ -234,8 +244,13 @@
   <script src="~/source/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="~/source/vendor/php-email-form/validate.js"></script>
 
+  <script src="~/https://cdn.jsdelivr.net/npm/popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <script src="~/https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+  <script src="~/https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <!-- Template Main JS File -->
   <script src="~/source/js/main.js"></script>
+
+
 </body>
 
 </html>

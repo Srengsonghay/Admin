@@ -22,7 +22,7 @@ namespace Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> CreatePartner()
         {
-            var list = await _adminDbContext.Category_partners.ToListAsync();
+            var list = await _adminDbContext.Category_partners.Where(x=>x.status == true).ToListAsync();
             var catlist = new List<SelectListItem>();
             foreach (var item in list)
             {
@@ -66,7 +66,7 @@ namespace Admin.Controllers
         public async Task<IActionResult> UpdatePartner(Guid id)
         {
 
-            var list = await _adminDbContext.Category_partners.ToListAsync();
+            var list = await _adminDbContext.Category_partners.Where(x => x.status == true).ToListAsync();
             var catlist = new List<SelectListItem>();
             foreach (var item in list)
             {
@@ -129,7 +129,7 @@ namespace Admin.Controllers
         }
         public async Task<IActionResult> ViewPartner()
         {
-            var partner = await _adminDbContext.Partners.ToListAsync();
+            var partner = await _adminDbContext.Partners.Where(x=>x.status == true).ToListAsync();
             return View(partner);
         }
     }

@@ -31,7 +31,7 @@
 
 						@foreach (var career in Model)
 						{
-							<div class="col-lg-4">
+							<div class="col-lg-6">
 								<article class="d-flex flex-column">
 									@*<div class="post-img">
 										<img src="~/source/img/blog/blog-1.jpg" alt="" class="img-fluid">
@@ -40,12 +40,13 @@
 											  <h2 class="title">
 												<a href="ViewCareerDetail\@career.id">@career.career_name</a>
 											  </h2>
-
+											  
 											  <div class="meta-top">
 												<ul>
-												  <li class="d-flex align-items-center" id="hovertext" data-hover="Hiring"><i class="bi bi-person" style="font-size:35px;" ></i> <a href="ViewCareerDetail\@career.id"> @career.hiring</a></li>
-												  <li class="d-flex align-items-center" id="hovertext" data-hover="Closing Date"><i class="bi bi-calendar2-week" style="font-size:35px;" ></i> <a href="ViewCareerDetail\@career.id"> @career.closing_date.Value.ToString("MMM-dd-yyyy")</a></li>
-												  <li class="d-flex align-items-center" id="hovertext" data-hover="Department"><i class="bi bi-building" style="font-size:35px;" ></i> <a href="ViewCareerDetail\@career.id">@career.department</a></li>
+												  <li class="d-flex align-items-center" id="hovertext" data-hover="Hiring"><i class="bi bi-person" style="font-size:28px;" ></i> <a href="ViewCareerDetail\@career.id"> @career.hiring</a></li>
+												  <li class="d-flex align-items-center" id="hovertext" data-hover="Closing Date"><i class="bi bi-calendar2-week" style="font-size:28px;" ></i> <a href="ViewCareerDetail\@career.id"> @career.closing_date.Value.ToString("MMM-dd-yyyy")</a></li>
+												  <li class="d-flex align-items-center" id="hovertext" data-hover="Department"><i class="bi bi-building" style="font-size:28px;" ></i> <a href="ViewCareerDetail\@career.id">@career.department</a></li>
+												  <li class="d-flex align-items-center" id="hovertext" data-hover="Apply Now"><a href="ViewCareerDetail\@career.id"><i class="bi bi-pencil-square" style="font-size:28px;"> </i></a></li>
 												</ul>
 											  </div>
 
@@ -63,6 +64,7 @@
 
 							</div>
 						}
+						
 			</div>
 		</div>
 	</div>

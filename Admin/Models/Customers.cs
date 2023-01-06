@@ -14,7 +14,7 @@ namespace Admin.Models
         public Guid category_id { get; set; }
         [ForeignKey("category_id")]
         [InverseProperty("Customers")]
-        public virtual Category_customer category_customer { get; set; }        
+        public virtual Category_customer category_customer { get; set; }
         public string? customer_detail { get; set; }
         public bool? status { get; set; }
     }

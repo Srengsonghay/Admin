@@ -1,14 +1,17 @@
 ﻿using Admin.Data;
 using Admin.Models;
+using Admin.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using X.PagedList;
 
 namespace Admin.Controllers
 {
     public class CustomerController : Controller
     {
         private readonly AdminDbContext _adminDbcontext;
+        private object pageSize;
 
         public CustomerController(AdminDbContext adminDbcontext)
         {
@@ -17,7 +20,7 @@ namespace Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> CreateCustomer()
         {
-            var list = await _adminDbcontext.Category_Customers.ToListAsync();
+            var list = await _adminDbcontext.Category_Customers.Where(x=>x.status == true).ToListAsync();
             var catelist = new List<SelectListItem>();
             foreach (var item in list)
             {
@@ -55,7 +58,7 @@ namespace Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> UpdateCustomer(Guid id)
         {
-            var list = await _adminDbcontext.Category_Customers.ToListAsync();
+            var list = await _adminDbcontext.Category_Customers.Where(x => x.status == true).ToListAsync();
             var catlist = new List<SelectListItem>();
             foreach (var item in list)
             {
@@ -107,12 +110,32 @@ namespace Admin.Controllers
             await _adminDbcontext.SaveChangesAsync();
             return RedirectToAction("ListCustomer");
         }
-        //public async Task<IActionResult> DeleteID (Guid id)
-        //{
-        //    var customer = await _adminDbcontext.Customers.FirstOrDefaultAsync(x => x.id == id);
-        //    _adminDbcontext.Remove(customer);
-        //    await _adminDbcontext.SaveChangesAsync();
-        //    return RedirectToAction("ListCustomer");
-        //}
+        public async Task<IActionResult> ViewCustomer()
+        {
+            //var pageNumber = page ?? 1;
+            //var pageSize = 10;
+
+            //CategoryCustomerViewModel cus = new CategoryCustomerViewModel();
+
+            //if (category != null)
+            //{
+            //    //ViewBag.Category = category;
+            //    cus.customer = await _adminDbcontext.Customers.OrderByDescending(x => x.id).Where(x => x.category_id == category).ToPagedList(pageNumber, pageSize).ToListAsync();
+            //}
+            //else
+            //{
+            //    cus.customer = await _adminDbcontext.Customers.Include(i => i.category_customer).ToListAsync();
+            //}
+            //cus.category_Customer = await _adminDbcontext.Category_Customers.ToListAsync();
+            //return View(cus);
+            var customer = await _adminDbcontext.Customers.Include(x => x.category_customer).Where(x => x.status == true).ToListAsync();
+            return View(customer);
+
+        }
+
     }
+            
+              
 }
+
+

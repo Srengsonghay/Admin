@@ -1,7 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
-
+using System.Web.Mvc;
 
 namespace Admin.Models{
     public class Solutions
@@ -16,8 +15,9 @@ namespace Admin.Models{
         public virtual SolutionsType solutions_type { get; set; }
 
 
-        [InverseProperty(nameof(Admin.Models.SolutionDetail.solutions))]
-        public virtual ICollection<SolutionDetail>? SolutionDetail { get; set; }
+        [InverseProperty(nameof(Admin.Models.SolutionsDetail.solutions))]
+        public virtual ICollection<SolutionsDetail>? SolutionDetail { get; set; }
+
         public string? description { get; set; }
 
     }

@@ -32,13 +32,13 @@
                       </thead>
                       <tbody>
                           @foreach(var Solutions in Model){
-                        <tr>             
-                            @*<td> @Partner.id </td>*@
-                          <td> @Solutions.solution_name </td>
-                          <td> @Solutions.solutions_type.type_name</td>
-                          @*<td> @Solution.description</td>*@
-                          <td> <a href="UpdateSolution\@Solutions.id"><button type="button" class="btn btn-inverse-info btn-sm">Edit</button></a></td>
-                          </tr>
+                              <tr>             
+                                @*<td> @Partner.id </td>*@
+                              <td> @Solutions.solution_name </td>
+                              <td> @Solutions.solutions_type.short_cut</td>
+                              @*<td> @Solution.description</td>*@
+                              <td> <a href="UpdateSolution\@Solutions.id"><button type="button" class="btn btn-inverse-info btn-sm">Edit</button></a></td>
+                              </tr>
                           }
                       </tbody>
                     </table>

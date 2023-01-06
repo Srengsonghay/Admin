@@ -5,11 +5,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Admin.Models;
 using static Admin.Models.Events;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Admin.Data
 {
 
-    public class AdminDbContext : DbContext
+    public class AdminDbContext : IdentityDbContext
     {
         public AdminDbContext(DbContextOptions<AdminDbContext> options) : base(options)
         {
@@ -26,9 +27,12 @@ namespace Admin.Data
             base.ConfigureConventions(builder);
 
         }
+
+        public DbSet<ApplicationUser> ApplicationUser { get; set; }
+        public DbSet<ApplicationRole> ApplicationRole { get; set; }
         public DbSet<Solutions>? Solutions { get; set; }
         public DbSet<SolutionsType>? SolutionsType { get; set; }
-        public DbSet<SolutionDetail>? SolutionDetails { get; set; }
+        public DbSet<SolutionsDetail>? SolutionDetails { get; set; }
         public DbSet<AboutUs>? AboutUs { get; set; }
         public DbSet<Careers>? Careers { get; set; }
         public DbSet<Events>? Events { get; set; }
@@ -36,5 +40,21 @@ namespace Admin.Data
         public DbSet<Customers>? Customers { get; set; }
         public DbSet<Category_customer>? Category_Customers { get; set; }
         public DbSet<Category_partner>? Category_partners { get; set; }
+        public DbSet<JobApplication>? jobApplications { get; set; }
+        public DbSet<NavigationMenu> NavigationMenu { get; set; }
+        public DbSet<RoleMenuPermission> RoleMenuPermission { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<RoleMenuPermission>()
+            .HasKey(c => new { c.RoleId, c.NavigationMenuId });
+            foreach (var relationship in builder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
+            {
+                relationship.DeleteBehavior = DeleteBehavior.Restrict;
+            }
+
+            base.OnModelCreating(builder);
+        }
+
     }
 }

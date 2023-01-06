@@ -50,8 +50,11 @@
 							@Html.Raw(@Model.career_detail)
 						</p>
 					  </div><!-- End post content -->
-
+						<br />
+						
+						<a href="..\CreateApplication\@Model.id" @*asp-controller="Career" asp-action="CreateApplication"*@><button type="submit" class="btn btn-primary" id="apply" style="background-color:black; border-style: none;">Apply Now</button></a>
 					</article><!-- End blog post -->
+					
 			</section><!-- End Blog Details Section -->
 
   </main><!-- End #main -->

@@ -1,0 +1,121 @@
+﻿@model Admin.Models.JobApplication
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Layout";
+}
+<style>
+ 
+</style>
+<!-- ======= Breadcrumbs ======= -->
+	<div class="breadcrumbs d-flex align-items-center" style="background-image: url('@Url.Content("~/source/img/blog-header.jpg")');">
+	  <div class="container position-relative d-flex flex-column align-items-center">
+
+		<h2>Apply Job</h2>
+			@* <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Blog Details</li>
+        </ol>*@
+
+	  </div>
+	</div><!-- End Breadcrumbs -->
+<section id="contact" class="contact" style="background-image: none;">
+      <div class="container position-relative" data-aos="fade-up">
+
+        <div class="row gy-4 d-flex justify-content-end">
+
+          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="250">
+
+            <form action="CreateApplication" enctype="multipart/form-data" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                    <label>First Name</label>
+                  <input type="text"  class="form-control"  placeholder="First Name" asp-for="first_name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <label>Last Name</label>
+                  <input type="text" class="form-control"  placeholder="Last Name" asp-for="last_name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <label>Gender</label>
+                 <select class="form-select" aria-label="Default select example" asp-for="gender" required>
+                     <option value="Male">Male</option>
+                     <option value="Female">Female</option>
+                 </select>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <label>Email</label>
+                  <input type="email" class="form-control"  placeholder="Email" asp-for="email" required>
+                </div>
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <label>Phone Number</label>
+                  <input type="text" class="form-control"  placeholder="Number" asp-for="contact" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <label>Date of Birth</label>
+                  <input type="date" class="form-control" placeholder="mm/dd/yyyy" asp-for="date_of_birth" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <label>Position</label>
+                  
+                  <select class="form-select" aria-label="Default select example" asp-for="career_id" asp-items="@ViewBag.position" disabled>
+                  </select>
+                  <input type="hidden" aria-label="Default select example" asp-for="career_id" asp-items="@ViewBag.position" ></input>
+                </div>
+                 <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <label>Department</label>
+                   
+                  <select class="form-select" aria-label="Default select example" asp-for="career_id" asp-items="@ViewBag.department" disabled>
+                      
+                  </select>
+                </div>
+                 <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <label>Work Experience</label>
+                  <input type="text" class="form-control" placeholder="Year" asp-for="experience" required>
+                </div>
+                 <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <label>Skill</label>
+                  <input type="text" class="form-control"  placeholder="Required" asp-for="skill" required>
+                </div>
+                 <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <label>Education</label>
+                  <input type="text" class="form-control"  placeholder="Required" asp-for="education" required>
+                </div>
+                
+                 <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <label>Referral Name</label>
+                  <input type="text" class="form-control" id="referral" placeholder="Optional" asp-for="referral_name">
+                </div>
+              @*<div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>*@
+              <div class="col-md-6">
+                  <label>How do you know this job?</label>
+                <textarea class="form-control" rows="5" placeholder="Optional" asp-for="comment"></textarea>
+              </div>
+                   <div class="col-md-6">
+                       <label>Upload File Here</label>
+                        <div class="input-group mb-3">
+                          <input type="file" class="form-control" id="inputGroupFile02" asp-for="formFile" required>
+                          <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                        </div>
+                    </div>
+                    
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your Application has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send</button></div>
+            </form>
+
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+    <script >
+       
+    </script>

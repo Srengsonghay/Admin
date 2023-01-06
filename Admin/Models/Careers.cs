@@ -1,6 +1,5 @@
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Admin.Models{
     public class Careers{
@@ -13,6 +12,8 @@ namespace Admin.Models{
         public string? department { get; set; }
         public int? hiring { get; set; }
         public DateTime? closing_date { get; set; }
-        public bool is_active { get; set; }
+        public bool? is_active { get; set; }
+        [InverseProperty(nameof(Admin.Models.JobApplication.Career))]
+        public virtual ICollection<JobApplication>? JobApplication { get; set; }
     }
 }

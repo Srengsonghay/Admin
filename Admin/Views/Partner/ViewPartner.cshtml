@@ -16,33 +16,40 @@
 
       </div>
     </div><!-- End Breadcrumbs -->
-<section id="services-cards" class="services-cards">
+ <section id="portfolio" class="portfolio">
       <div class="container" data-aos="fade-up">
+          <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
 
-        <div class="row gy-4">
-                @foreach(var partner in Model){
-                  <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card-item">
-                      <div class="row">
-                        <div class="col-xl-5 ">
-                            @{
-                               var base64 = Convert.ToBase64String(partner.partner_logo);
-                               var img = string.Format("data:image/gif;base64,{0}", base64);
-                             }
-                          @*<div class="card-bg" style="background-image: url(@img);"></div>*@
-                          <img src="@img" class="card-bg" style="width:250px; height:120px;">
-                        </div>
-                        <div class="col-xl-7 d-flex align-items-center">
-                          <div class="card-body">
-                            <h4 class="card-title">@partner.partner_name</h4>
-                            <p>@Html.Raw(partner.partner_detail)</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div><!-- End Card Item -->
+          @*<ul class="portfolio-flters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-app">App</li>
+            <li data-filter=".filter-product">Product</li>
+            <li data-filter=".filter-branding">Branding</li>
+            <li data-filter=".filter-books">Books</li>
+          </ul><!-- End Portfolio Filters -->*@
+
+          <div class="row gy-4 portfolio-container " data-aos="fade-up" data-aos-delay="300">
+                @foreach (var partner in Model)
+                {
+                             
+                          <div class="col-lg-2 col-md-6 portfolio-item filter-app">
+                                 @{
+                                   var base64 = Convert.ToBase64String(partner.partner_logo);
+                                   var img = string.Format("data:image/gif;base64,{0}", base64);
+                                 }
+                          <img src="@img" class="img-fluid" title="@partner.partner_name" alt="">
+                          @*<div class="portfolio-info">
+                            <h4>App 1</h4>
+                            <p>Lorem ipsum, dolor sit amet consectetur</p>
+                            <a href="assets/img/portfolio/app-1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                            <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                          </div>*@
+                        </div><!-- End Portfolio Item -->
                 }
-          </div>
+                
+            </div><!-- End Portfolio Container -->
+
+        </div>
 
       </div>
-    </section><!-- End Services Cards Section -->
+    </section><!-- End Portfolio Section -->

@@ -1,11 +1,13 @@
 ﻿using Admin.Data;
 using Admin.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace Admin.Controllers
 {
+    [Authorize]
     public class SolutionDetailController : Controller
     {
         private readonly AdminDbContext _adminDbContext;
@@ -13,7 +15,7 @@ namespace Admin.Controllers
         {
             _adminDbContext = AdminDb;
         }
-        [HttpGet]
+        [HttpGet, Authorize("Authorization")]
         public async Task<IActionResult> CreateSolutionDetail()
         {
             var list = await _adminDbContext.Solutions.ToListAsync();
@@ -29,8 +31,8 @@ namespace Admin.Controllers
             ViewBag.type = type;
             return View();
         }
-        [HttpPost]
-        public async Task<IActionResult> CreateSolutionDetail(SolutionDetail detail)
+        [HttpPost, Authorize("Authorization")]
+        public async Task<IActionResult> CreateSolutionDetail(SolutionsDetail detail)
         {
             await _adminDbContext.SolutionDetails.AddAsync(detail);
             await _adminDbContext.SaveChangesAsync();
@@ -43,7 +45,7 @@ namespace Admin.Controllers
             return View(listSolutionDetail);
         }
 
-        [HttpGet]
+        [HttpGet, Authorize("Authorization")]
         public async Task<IActionResult> UpdateSolutionDetail(Guid id)
         {
             var list = await _adminDbContext.Solutions.ToListAsync();
@@ -61,15 +63,15 @@ namespace Admin.Controllers
             return View(detail);
             return RedirectToAction("UpdateSolutionDetail");
         }
-        [HttpPost]
-        public async Task<IActionResult> UpdateSolutionDetail(SolutionDetail model)
+        [HttpPost, Authorize("Authorization")]
+        public async Task<IActionResult> UpdateSolutionDetail(SolutionsDetail model)
         {
             _adminDbContext.Update(model);
             await _adminDbContext.SaveChangesAsync();
             return RedirectToAction("ListSolutionDetail");
         }
-        [HttpPost]
-        public async Task<IActionResult> Delete(SolutionDetail model)
+        [HttpPost, Authorize("Authorization")]
+        public async Task<IActionResult> Delete(SolutionsDetail model)
         {
             var detail = await _adminDbContext.SolutionDetails.FindAsync(model.id);
             if (detail != null)

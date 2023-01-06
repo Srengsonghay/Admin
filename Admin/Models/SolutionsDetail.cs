@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Admin.Models{
-    public class SolutionDetail{
+    public class SolutionsDetail{
         [Key]
         public Guid id {get; set;}
         

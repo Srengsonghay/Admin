@@ -1,0 +1,106 @@
+﻿@model Admin.ViewModel.SolutionDetailViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Layout";
+}
+<div class="breadcrumbs d-flex align-items-center" style="background-image: url('@Url.Content("~/source/img/portfolio-header.jpg")');">
+      <div class="container position-relative d-flex flex-column align-items-center">
+
+        <h2>Solution Details</h2>
+       @* <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Solution Details</li>
+        </ol>*@
+
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+    <section id="blog" class="blog">
+        <section id="portfolio-details" class="portfolio-details" style="margin:0; padding:0;text-align:justify;">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row g-5">
+
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="row gy-5 posts-list">
+
+                      <div class="portfolio-info">
+                          <h3>Solution information</h3>
+                          <ul>
+                              <li><div class="title"><strong>Solution Name</strong>: @Model.solutionDetail.solutions.solution_name</div> </li>
+                              <li><strong>Solution Type</strong>: @Model.solutionDetail.solutions.solutions_type.type_name (@Model.solutionDetail.solutions.solutions_type.short_cut)</li>
+                            <li><strong>Brief Summary</strong>: @Html.Raw(Model.solutionDetail.solutions.description)</li>
+                            @*<li><strong>Project date</strong>: 01 March, 2020</li>
+                            <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>*@
+                          </ul>
+                        </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-lg-12">
+                            <div class="portfolio-description">
+                              <h2>Details</h2>
+                              <p>
+                                @Html.Raw(Model.solutionDetail.remark)
+                              </p>
+                            </div>
+                            </div>
+                          
+                    
+              </div>
+          </div>
+         
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
+
+            <div class="sidebar ps-lg-4">
+
+             @* <div class="sidebar-item categories">
+                <h3 class="sidebar-title">Categories</h3>
+                <ul class="mt-3">
+                  <li data-filter="*" class="filter-active" ><a href="ViewSolution">All</a></li>
+                    @foreach (var type in Model.SolutionType)
+                    {
+                        <li data-filter="*" >
+                        @Html.ActionLink(@type.type_name, "ViewSolution", "Solution", new {type= @type.id}, null)
+                        </li>
+                    }
+                  
+                </ul>
+              </div><!-- End sidebar categories-->*@
+
+              <div class="sidebar-item recent-posts">
+                <h3 class="sidebar-title">Discover More</h3>
+
+                <div class="mt-3">
+                                @foreach (var list in Model.relatedSolution.Take(5))
+                                {
+                                    <div class="post-item mt-3">
+                                    @*<img src="assets/img/blog/blog-recent-1.jpg" alt="" class="flex-shrink-0">
+                                    <div>*@
+                                      <h4><a href="@list.id">@list.solution_name</a></h4>
+                                      @*<time datetime="2020-01-01">Jan 1, 2020</time>*@
+                                   @* </div>*@
+                                  </div><!-- End recent post item-->
+                                }
+                               
+                </div>
+
+              </div><!-- End sidebar recent posts-->
+
+              
+            </div><!-- End Blog Sidebar -->
+
+          </div>
+
+        </div>
+
+      </div>
+      </section>
+     </section><!-- End Blog Section -->
+
+
+

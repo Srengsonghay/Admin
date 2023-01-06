@@ -32,12 +32,8 @@ namespace Admin.Controllers
             var listAboutUS = await _adminDbContext.AboutUs.ToListAsync();
             return View(listAboutUS);
         }
-        [HttpGet]
-        public async Task<IActionResult> about()
-        {
-            var about = await _adminDbContext.AboutUs.ToListAsync();
-            return View(about);
-        }
+       
+        
         [HttpGet]
         public async Task<IActionResult> UpdateAboutUS(Guid id)
         {
@@ -62,6 +58,11 @@ namespace Admin.Controllers
                 await _adminDbContext.SaveChangesAsync();
             }
             return RedirectToAction("ListAboutUS");
+        }
+        public async Task<IActionResult> ViewAboutus()
+        {
+            var about = await _adminDbContext.AboutUs.ToListAsync();
+            return View(about);
         }
     }
 }

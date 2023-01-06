@@ -1,0 +1,105 @@
+﻿@model Admin.Models.JobApplication
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+	Layout = "_LayoutDash";
+}
+<style>
+    p{
+        font-size: 18px;
+    }
+    #align{
+        float:right;
+    }
+</style>
+<div class="col-lg-12 grid-margin stretch-card">
+				<div class="card">
+				  <div class="card-body">
+					<h4 class="card-title">
+                        <a asp-area="" asp-controller="Career" asp-action="ListApplication"><i class="mdi mdi-chevron-left"></i></a>
+						Candidate Details
+						<span style="Float:right;">Date : @Model.send_date.ToString("MMM-dd-yyyy")</span>
+					</h4>
+                    <br />
+						<div class="row ">
+
+								  <div class="col-md-2">
+									<address>
+									  <p class="font-weight-bold">First Name<span id="align">:</span></p>
+                                      <p class="font-weight-bold">Last Name<span id="align">:</span></p>
+                                      <p class="font-weight-bold">Full Name<span id="align">:</span></p>
+                                      <p class="font-weight-bold">Sex<span id="align">:</span></p>
+                                      <p class="font-weight-bold">Date of Birth<span id="align">:</span></p>
+                                      <p class="font-weight-bold">Contact<span id="align">:</span></p>
+                                      <p class="font-weight-bold">Email<span id="align">:</span></p>
+                                      
+                                      
+									  
+									</address>
+								  </div>
+								  <div class="col-md-4">
+									<address >
+                                        <p> @Model.first_name </p>
+                                        <p> @Model.last_name </p>
+                                        <p> @Model.first_name @Model.last_name </p>
+                                        <p> @Model.gender </p>
+                                        <p> @Model.date_of_birth.ToString("MMM-dd-yyyy") </p>
+                                        <p> @Model.contact </p>
+                                        <address class="text-primary" style="margin:0; padding:0;">
+                                            <p class="font-weight-bold"> @Model.email </p>
+                                        </address>
+									  
+									  
+									</address>
+								  </div>
+                                  <div class="col-md-2">
+									<address>
+									  
+                                      <p class="font-weight-bold">Position Applied<span id="align">:</span></p>
+                                      <p class="font-weight-bold">Department<span id="align">:</span></p>
+                                      <p class="font-weight-bold">Education<span id="align">:</span></p>
+                                      <p class="font-weight-bold">Skill<span id="align">:</span></p>
+                                      <p class="font-weight-bold">Experience<span id="align">:</span></p>
+                                      <p class="font-weight-bold">Referral<span id="align">:</span></p>
+                                      
+									  
+									</address>
+								  </div>
+                                   <div class="col-md-4">
+									<address >
+									  <p class="font-weight-bold" style="margin:0; padding:0;"> @Model.Career.career_name </p>
+                                        <p> @Model.Career.department</p>
+                                        <p> @Model.education</p>
+                                        <p> @Model.skill</p>
+                                        <p> @Model.experience</p>
+                                        <p> @Model.referral_name</p>
+                                        <p></p>
+									</address>
+								  </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-12">
+                                     <p class="font-weight-bold">Comment</p>
+                                     <p style="text-align:justify;"> @Model.comment</p>
+                              </div>
+                          </div>
+                           <div class="row">
+                              <div class="col-md-12">
+                                     <p class="font-weight-bold">File Attachment</p>
+                                     
+                                         @{
+                                           string base64PDF = System.Convert.ToBase64String(Model.file, 0, Model.file.Length);
+                                         
+                                             
+
+                                            <embed src="data:application/pdf;base64, <%: Model.base64doc %>" type="application/pdf" width="100%" height="500"/>
+                                        }
+                                     
+                              </div>
+                          </div>
+
+				  </div>
+				</div>
+			  </div>

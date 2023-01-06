@@ -1,0 +1,66 @@
+﻿@*@model List<Admin.Models.JobApplication>*@
+@model Admin.ViewModel.ListJobViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_LayoutDash";
+}
+<div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">
+                        Job Application Lists 
+                        
+                              
+                            <form class="forms-sample" method="post" action="ListApplication">
+                                <div class="row" style="width:300px;float: right;margin:0px;">    
+                               <div class="col-10">
+                                 <select class="form-select" aria-label="Default select example" asp-for="select_career"
+                                    asp-items="@ViewBag.position">
+                                    <option value="">All</option>  
+                              </select> </div>
+                              <div class="col-2">
+                              <button type="submit" class="btn btn-inverse-primary btn-sm" >Go</button>
+                              </div>
+                              </div>
+                  </form> 
+                            
+                        
+                    </h4>
+            
+            
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          @*<th> ID </th>*@
+                          <th> Applied Position</th>
+                          <th> First Name </th>
+                          <th> Last Name </th>
+                          <th> Sex </th>
+                           <th> Contact</th>
+                          <th> Send Date</th>
+                         @* <th> Status</th>*@
+                          <th>  </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          @foreach(var job in Model.Job){
+                          <tr>             
+                          @*<td> @category_partner.id </td>*@
+                           <td> @job.Career.career_name</td>
+                          <td> @job.first_name </td>
+                          <td> @job.last_name </td>
+                          <td> @job.gender </td>
+                          <td> @job.contact </td>
+                          <td> @job.send_date.ToString("MMM-dd-yyyy") </td>
+                          <td> <a href="ViewApplicationDetail\@job.id"><button type="button" class="btn btn-inverse-info btn-sm">Details</button></a>
+							  </td>
+                          </tr>
+                          }
+                      </tbody>
+                    </table>
+                    
+                  </div>
+                </div>
+              </div>

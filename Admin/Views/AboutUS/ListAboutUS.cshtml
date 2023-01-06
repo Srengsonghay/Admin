@@ -20,7 +20,7 @@
                          @* <th> ID </th>
                           <th> Logo </th>*@
                           <th> Heading </th>
-                          <th> Description </th>
+                          <th>@* Description*@ </th>
                           @*<th> Status</th>*@
                           <th>  </th>
                         </tr>
@@ -31,7 +31,7 @@
                          @* <td> @about.id </td>*@
                           <td> @about.about_heading </td>
                           
-                          <td> @Html.Raw(@about.about_detail.Substring(0,about.about_detail.Length > 70 ? 70 : about.about_detail.Length))</td>
+                          <td> @*@Html.Raw(@about.about_detail.Substring(0,about.about_detail.Length > 70 ? 70 : about.about_detail.Length))*@</td>
                           @*<td> @about.status</td>*@
                           <td> <a href="UpdateAboutUS\@about.id"><button type="button" class="btn btn-inverse-info btn-sm">Edit</button></a></td>
                           </tr>

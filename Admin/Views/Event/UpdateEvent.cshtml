@@ -11,7 +11,7 @@
     <div class="card-body">
       <h4 class="card-title">Update Events</h4>
       @*<p class="card-description"> Basic form elements </p>*@
-      <form class="forms-sample" method="post" asp-action="UpdateEvent">
+      <form class="forms-sample" enctype="multipart/form-data" method="post" asp-action="UpdateEvent">
         <div class="form-group">
           @*<label for="exampleInputName1">ID</label>*@
           <input type="hidden" class="form-control" id="exampleInputName1" asp-for="id" >
@@ -20,6 +20,10 @@
           <label for="exampleInputEmail3">Event Heading</label>
           <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Name" asp-for="event_heading">
         </div>
+        <div class="form-group">
+                  <label>Image</label>
+                  <input type="file" class="form-control btn-gradient-primary" id="formFile" asp-for="logo">
+                </div>
         <div class="form-group">
             <label>Date</label>
             <input class="form-control" type="date" asp-for ="event_date">

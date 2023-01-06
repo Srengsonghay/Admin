@@ -18,8 +18,9 @@
                         <tr>
                          @* <th> ID </th>
                           <th> Logo </th>*@
+                          <th> Image</th>
                           <th> Heading </th>
-                          <th> Detail </th>
+                          @*<th> Detail </th>*@
                           <th> Date</th>
                           <th>  </th>
                         </tr>
@@ -28,8 +29,15 @@
                           @foreach(var events in Model){
                           <tr>             
                          @* <td> @Partner.id </td>*@
+                          <td> 
+                               @{
+                                    var base64 = Convert.ToBase64String(events.event_image);
+                                    var img = string.Format("data:image/gif;base64,{0}", base64);
+                                }
+                              <img src="@img" style="width:60px; height:60px"> 
+                          </td>
                           <td> @events.event_heading </td>
-                          <td> @Html.Raw(@events.event_detail) </td>
+                         @* <td> @Html.Raw(@events.event_detail) </td>*@
                           <td> @events.event_date.Value.ToString("MMM-dd-yyyy")</td> 
                           <td> <a href="UpdateEvent\@events.id"><button type="button" class="btn btn-inverse-info btn-sm">Edit</button></a></td>
                           </tr>

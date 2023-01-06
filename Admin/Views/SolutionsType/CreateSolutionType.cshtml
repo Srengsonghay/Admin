@@ -27,6 +27,21 @@
             </div>
         </div>
         </div>*@
+        <div class="form-group">
+          <label for="exampleInputEmail3">Short Cut </label>
+          <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Name" asp-for="short_cut">
+        </div>
+         <div class="form-group">
+          <label for="exampleInputPassword4">Description</label>
+          
+          <textarea id="div_editor1" style="width: 100%;" asp-for="description" class="form-control">
+              
+         </textarea>  
+         </div>
+          <script>
+            var editor1 = new RichTextEditor("#div_editor1");
+          //editor1.setHTMLCode("Use inline HTML or setHTMLCode to init the default content.");
+          </script>
         
         <button type="submit" class="btn btn-inverse-primary btn-fw" value="Insert">Insert</button>
         <button asp-area="" asp-controller="SolutionsType" asp-action="ListSolutionType" class="btn btn-inverse-success btn-fw" >View</button>

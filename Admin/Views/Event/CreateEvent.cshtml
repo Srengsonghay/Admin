@@ -9,7 +9,7 @@
   <div class="card">
     <div class="card-body">
       <h4 class="card-title">Add Event</h4>
-      <form class="forms-sample" method="post" action="CreateEvent">
+      <form class="forms-sample" enctype="multipart/form-data" method="post" action="CreateEvent">
         <div class="form-group">
           @*<label for="exampleInputName1">ID</label>*@
           <input type="hidden" class="form-control" id="exampleInputName1" readonly> 
@@ -18,6 +18,10 @@
           <label for="exampleInputEmail3">Event Heading</label>
           <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Name" asp-for="event_heading ">
         </div>
+        <div class="form-group">
+                  <label>Image</label>
+                  <input type="file" class="form-control btn-gradient-primary" asp-for="event_image">
+                </div>
         <div class="form-group">
           <label for="exampleInputEmail3">Date</label>
           <input type="date"  class="form-control" id="datepicker" asp-for="event_date">
