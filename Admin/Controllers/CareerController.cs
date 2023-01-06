@@ -93,8 +93,8 @@ namespace Admin.Controllers
             }
             ViewBag.department = list2;
             return View(job);
-            //return RedirectToAction("CreateApplication");
-            return RedirectToAction("ViewCareerDetail");
+            return RedirectToAction("CreateApplication");
+            
         }
         [HttpPost]
         public async Task<IActionResult> CreateApplication(JobApplication jobApplication)
